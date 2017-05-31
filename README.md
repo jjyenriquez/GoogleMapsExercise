@@ -9,3 +9,7 @@ CompileSdk: 25
 NOTE: How to use the APP:
 * You can choose to look for restaurants in SF either by using maps or by lists. 
 * When using maps, you can drag and drop the person marker to look for new places.
+
+Built on:
+Android Studio 2.3.2
+Gradle 2.3.2
