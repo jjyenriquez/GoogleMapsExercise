@@ -2,6 +2,7 @@ package com.jjye.aroundsf.remoteAccess.api;
 
 
 import com.jjye.aroundsf.remoteAccess.responses.NearbySearchResponse;
+import com.jjye.aroundsf.remoteAccess.responses.PlaceDetailResponse;
 
 import retrofit2.http.GET;
 import retrofit2.http.Query;
@@ -21,7 +22,17 @@ public class PlaceService extends BaseService {
     }
 
     public interface PlaceAPI {
-        @GET("nearbysearch/json?rankby=distance")
-        public Observable<NearbySearchResponse> getNearbyPlaces(@Query("type") String type, @Query("location") String LatLng);
+        @GET("nearbysearch/json?rankby=distance&type=restaurant")
+        public Observable<NearbySearchResponse> getNearbyPlaces(@Query("location") String LatLng);
+
+        @GET("nearbysearch/json?radius=5000&type=restaurant")
+        public Observable<NearbySearchResponse> getNearbyProminentPlaces(@Query("location") String LatLng);
+
+        @GET("nearbysearch/json?radius=5000&type=restaurant")
+        public Observable<NearbySearchResponse> getNearbyProminentPlaces(@Query("location") String LatLng, @Query("pagetoken") String pageToken);
+
+
+        @GET("details/json?")
+        public Observable<PlaceDetailResponse> getPlaceDetail(@Query("placeid") String placeid);
     }
 }

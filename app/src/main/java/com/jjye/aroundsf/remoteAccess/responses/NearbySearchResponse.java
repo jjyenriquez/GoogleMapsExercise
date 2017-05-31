@@ -10,8 +10,13 @@ import java.util.List;
 
 public class NearbySearchResponse {
     private List<Place> results;
+    private String nextPageToken;
 
     public List<Place> getResults() {
         return results;
+    }
+
+    public String getNextPageToken() {
+        return nextPageToken;
     }
 }
